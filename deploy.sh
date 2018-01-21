@@ -1,3 +1,4 @@
 #!/bin/bash
 
-./node_modules/.bin/serverless deploy
+docker-compose run deploy \
+    /deploy.sh

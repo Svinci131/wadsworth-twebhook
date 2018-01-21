@@ -3,7 +3,7 @@ services:
   deploy:
     build:
       context: .
-      dockerfile: Dockerfile_deploy
+      dockerfile: docker/Dockerfile_deploy
     container_name: twebhook_py_deploy
     environment:
       ENV: develop
@@ -15,7 +15,7 @@ services:
   test:
     build:
       context: .
-      dockerfile: Dockerfile_test
+      dockerfile: docker/Dockerfile_test
     container_name: twebhook_py_test
     environment:
       ENV: develop
