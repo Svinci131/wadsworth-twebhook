@@ -1,6 +1,6 @@
 version: '2'
 services:
-  python:
+  deploy:
     build:
       context: .
       dockerfile: Dockerfile_deploy
@@ -10,4 +10,15 @@ services:
     volumes:
       - .:/app
       - ~/.aws/credentials:/root/.aws/credentials
+    restart: on-failure
+
+  test:
+    build:
+      context: .
+      dockerfile: Dockerfile_test
+    container_name: twebhook_py_test
+    environment:
+      ENV: develop
+    volumes:
+      - .:/app
     restart: on-failure
