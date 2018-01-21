@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-	 "deploy": "$(npm bin)/serverless deploy"
-  },
-  "author": "",
+  "author": "Samantha Vinci, Mottaqui Karim",
   "license": "MIT",
   "devDependencies": {
     "serverless": "^1.25.0",
