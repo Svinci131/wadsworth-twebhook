@@ -1,0 +1,18 @@
+FROM lambci/lambda:build-python3.6
+ADD . /app
+WORKDIR /app
+
+# Install python dependencies
+RUN pip install -r requirements.txt
+
+# Install nodejs
+RUN \
+  curl -sL https://rpm.nodesource.com/setup_6.x | bash && \
+  yum install -y nodejs && \
+  yum clean all
+
+# install npm dependencies
+RUN npm install
+
+# copy deploy file
+COPY ./docker/run_docker_deploy.sh /deploy.sh
