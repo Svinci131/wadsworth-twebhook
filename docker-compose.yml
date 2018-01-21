@@ -3,10 +3,11 @@ services:
   python:
     build:
       context: .
-      dockerfile: Dockerfile
-    container_name: twebhook_py
+      dockerfile: Dockerfile_deploy
+    container_name: twebhook_py_deploy
     environment:
       ENV: develop
     volumes:
       - .:/app
+      - ~/.aws/credentials:/root/.aws/credentials
     restart: on-failure
