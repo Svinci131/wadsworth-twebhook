@@ -35,7 +35,7 @@ docker-compose run test
 ## Deploy
 To deploy to AWS lambda,
 ```
-docker-compose run deploy
+./deploy.sh
 ```
 
 *This project is a **[wadsworth](https://github.com/Svinci131/wadsworth)** service.*
